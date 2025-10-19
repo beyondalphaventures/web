@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeyondAlpha - Advanced Trading Platform & Venture Capital</title>
+    <meta name="description" content="Trade stocks with $0 commissions, access IPOs, and invest in breakthrough AI, Blockchain, Quantum, and Longevity ventures.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 70px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #2563eb;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-login {
+            color: #374151;
+            background: transparent;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #f3f4f6;
+        }
+
+        .btn-signup {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-signup:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 40px 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 14px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .disclaimer {
+            font-size: 0.75rem;
+            margin-top: 30px;
+            opacity: 0.8;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Venture Capital Section */
+        .venture-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 80px 40px;
+        }
+
+        .venture-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .venture-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .venture-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .venture-item h4 {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        /* Security Section */
+        .security-section {
+            padding: 80px 40px;
+            background: #f9fafb;
+        }
+
+        .security-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #9ca3af;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-legal {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            line-height: 1.8;
+            color: #6b7280;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            margin-bottom: 30px;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-header p {
+            color: #6b7280;
+        }
+
+        .close {
+            color: #9ca3af;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #1a1a1a;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            background: #1d4ed8;
+        }
+
+        .form-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .features-grid,
+            .venture-grid,
+            .security-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="public/img/bav-logo.png" alt="BeyondAlpha">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#features">Trading</a></li>
+                <li><a href="#venture">Venture Fund</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#help">Help</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-login" onclick="openLoginModal()">LOG IN</button>
+                <button class="btn-signup" onclick="openSignupModal()">Open Account</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Advanced Trading Platform & App</h1>
+        <p>Analytics, screeners, and candlestick charts can help experienced traders stay on top of the market.</p>
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary" onclick="openSignupModal(); return false;">Open Account</a>
+            <a href="#features" class="btn-secondary">Learn More</a>
+        </div>
+        <p class="disclaimer">*Day Trading involves significant risk and is not suitable for everyone. Before engaging in day trading, carefully consider your investment objectives, experience level, and risk tolerance.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Trade with Confidence</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>$0 Commission Trading</h3>
+                <p>Trade U.S. stocks and ETFs with zero commission fees. Keep more of your profits.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🕐</div>
+                <h3>24/5 Trading Access</h3>
+                <p>Trade Sunday 8PM ET to Friday 8PM ET with extended hours access for maximum flexibility.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>IPO Access</h3>
+                <p>Discover and invest in public offerings with our one-click subscription service.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile & Desktop</h3>
+                <p>Trade seamlessly across iOS, Android, Mac, Windows, and web platforms.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Bank-Level Security</h3>
+                <p>2FA authentication, encrypted data, and FINRA/SIPC protection for your peace of mind.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>IRA Accounts</h3>
+                <p>Earn up to 3% match on transfers and new contributions with our IRA accounts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venture Capital Section -->
+    <section id="venture" class="venture-section">
+        <div class="venture-content">
+            <h2 class="section-title" style="color: white;">Beyond Alpha Ventures Fund</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                Our white-glove venture capital fund focuses on breakthrough technologies shaping tomorrow.
+                We invest in visionary founders building the future across five key sectors.
+            </p>
+            <div class="venture-grid">
+                <div class="venture-item">
+                    <div class="feature-icon">🤖</div>
+                    <h4>Artificial Intelligence</h4>
+                </div>
+                <div class="venture-item">
+                    <div class="feature-icon">🔗</div>
+                    <h4>Blockchain</h4>
+                </div>
+                <div class="venture-item">
+                    <div class="feature-icon">⚛️</div>
+                    <h4>Quantum Computing</h4>
+                </div>
+                <div class="venture-item">
+                    <div class="feature-icon">🦾</div>
+                    <h4>Robotics</h4>
+                </div>
+                <div class="venture-item">
+                    <div class="feature-icon">🧬</div>
+                    <h4>Longevity</h4>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="about.html" class="btn-primary">Learn About Our Vision</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security-section">
+        <div class="security-content">
+            <h2 class="section-title">Trusted & Regulated</h2>
+            <div class="security-grid">
+                <div class="feature-card">
+                    <h3>🛡️ Enhanced Security</h3>
+                    <ul style="margin-top: 15px; color: #6b7280;">
+                        <li>• Email and phone verification for new devices</li>
+                        <li>• Two-factor authentication (2FA)</li>
+                        <li>• Trading password protection</li>
+                        <li>• Bank-level encryption</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>✅ Fully Licensed</h3>
+                    <ul style="margin-top: 15px; color: #6b7280;">
+                        <li>• SEC registered (SEC No.: 8-36754)</li>
+                        <li>• Member of FINRA/SIPC</li>
+                        <li>• Regulated broker-dealer</li>
+                        <li>• Institutional-grade compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#features">Stock Trading</a></li>
+                        <li><a href="#features">IPO Access</a></li>
+                        <li><a href="#features">IRA Accounts</a></li>
+                        <li><a href="#venture">Venture Fund</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#institutional">Institutional</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#disclosure">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p><strong>BeyondAlpha</strong></p>
+                <p>The Trump Building | 40 Wall Street, Suite 2702 | New York, NY 10005</p>
+                <p style="margin-top: 20px;">Member of FINRA/SIPC</p>
+
+                <div class="footer-legal">
+                    <p>BeyondAlpha is a trading platform offered by BeyondAlpha Inc. Securities products and brokerage services available through the BeyondAlpha App are offered by BeyondAlpha Securities, Inc. BeyondAlpha Securities, Inc. is a member of FINRA, SIPC, and NYSE.</p>
+
+                    <p style="margin-top: 15px;">All investments involve risk, including possible loss of principal. $0.00 commission applies to online U.S. equity trades and exchange-traded funds (ETFs) in a BeyondAlpha retail account only. Sell orders are subject to an activity assessment fee.</p>
+                </div>
+
+                <p style="margin-top: 30px;">© 2025 Beyond Alpha Ventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <div class="modal-header">
+                <h2>Open Your Account</h2>
+                <p>Complete the form below to get started</p>
+            </div>
+            <form id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth *</label>
+                    <input type="date" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label>Country of Residence *</label>
+                    <select name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-note">
+                    <strong>📋 Next Steps:</strong> After submitting, you'll need to provide KYC documentation (government ID, proof of address) for manual review and approval before trading access is granted.
+                </div>
+                <button type="submit" class="form-submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="modal-header">
+                <h2>Log In</h2>
+                <p>Access your account</p>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required>
+                </div>
+                <button type="submit" class="form-submit">Log In</button>
+                <p style="text-align: center; margin-top: 15px; color: #6b7280;">
+                    <a href="#" style="color: #2563eb; text-decoration: none;">Forgot password?</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openSignupModal() {
+            document.getElementById('signupModal').style.display = 'block';
+            fbq('track', 'InitiateCheckout'); // Facebook Pixel event
+            gtag('event', 'begin_signup'); // Google Analytics event
+        }
+
+        function closeSignupModal() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'block';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Handle signup form submission
+        function handleSignup(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            // Track conversion
+            fbq('track', 'CompleteRegistration');
+            gtag('event', 'sign_up', { method: 'email' });
+
+            // TODO: Send to your backend API for KYC processing
+            console.log('Signup data:', data);
+
+            alert('Thank you for applying! Our team will review your application and KYC documents within 1-2 business days. You will receive an email with next steps.');
+            closeSignupModal();
+            event.target.reset();
+        }
+
+        // Handle login form submission
+        function handleLogin(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            // Track login
+            gtag('event', 'login', { method: 'email' });
+
+            // TODO: Send to your authentication API
+            console.log('Login data:', data);
+
+            alert('Login functionality will be connected to your authentication system.');
+            closeLoginModal();
+        }
+    </script>
+</body>
+</html>
