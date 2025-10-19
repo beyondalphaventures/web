@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4E4BC;
+  --color-primary: #0A0A0A;
+  --color-secondary: #141414;
+}
 
 * {
   font-family: 'Inter', system-ui, sans-serif;
@@ -31,4 +36,73 @@ body {
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+}
+
+/* Prose styles for article content */
+.prose {
+  color: #E5E5E5;
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #D4AF37;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #F4E4BC;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
+
+.prose a {
+  color: #D4AF37;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #F4E4BC;
+}
+
+.prose ul, .prose ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #fff;
+}
+
+.prose blockquote {
+  border-left: 4px solid #D4AF37;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #9CA3AF;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+
+.prose code {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
 }

@@ -1,79 +1,213 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" }
-}
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section id="main" className="pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center space-y-8 mb-20"
-            variants={staggerContainer}
-            initial="initial"
-            animate="animate"
-          >
-            <motion.div
-              variants={fadeInUp}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-gold/20"
-            >
-              <svg className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
-              <span className="text-gold text-sm font-semibold">2025 'Hedge Fund to Watch of the Year'</span>
-            </motion.div>
+      {/* Hero */}
+      <section className="container mx-auto px-6 py-32 text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-block bg-gold/10 border border-gold/30 rounded-full px-4 py-2 mb-6">
+            <p className="text-gold text-xs uppercase tracking-wider">2025 'Hedge Fund to Watch of the Year'</p>
+          </div>
+          <h1 className="text-6xl md:text-7xl font-bold mb-6">
+            BEYOND ALPHA<br />
+            <span className="text-gold">VENTURES</span>
+          </h1>
+          <p className="text-xl text-gray-400 mb-8 uppercase tracking-wider">PRESERVING WEALTH • CULTIVATING LEGACIES</p>
+          <p className="text-gray-500 mb-12 max-w-2xl mx-auto">
+            Institutional-grade investment strategies across nine transformative verticals.
+            Headquartered at 40 Wall Street, New York.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Link href="/contact">
+              <button className="bg-gold text-black px-8 py-3 rounded font-semibold hover:bg-gold-light transition">
+                Schedule a Consultation
+              </button>
+            </Link>
+            <a href="mailto:inquiries@beyondalphaventures.com?subject=Track%20Record%20Request">
+              <button className="border border-gold text-gold px-8 py-3 rounded font-semibold hover:bg-gold hover:text-black transition">
+                View Our Track Record
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
 
-            <motion.h1
-              variants={fadeInUp}
-              className="text-6xl lg:text-8xl font-bold tracking-tight"
-            >
-              <span className="block text-white">BEYOND ALPHA</span>
-              <span className="block text-white">VENTURES</span>
-            </motion.h1>
+      {/* Investment Philosophy */}
+      <section className="container mx-auto px-6 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Our Investment Philosophy</h2>
+          <p className="text-gray-400">Built on decades of institutional experience</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">📊</span>
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Risk-Adjusted Excellence</h3>
+            <p className="text-gray-500">We prioritize consistent, risk-adjusted returns over volatile performance, focusing on downside protection and capital preservation.</p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🔬</span>
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Institutional-Grade Research</h3>
+            <p className="text-gray-500">Our investment process combines quantitative analysis with deep fundamental research across all nine verticals.</p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🤝</span>
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Long-Term Partnership</h3>
+            <p className="text-gray-500">We view our relationships as true partnerships, aligning our interests with yours for generational wealth building.</p>
+          </div>
+        </div>
+      </section>
 
-            <motion.h2
-              variants={fadeInUp}
-              className="text-2xl lg:text-3xl font-light text-gray-400 max-w-3xl mx-auto tracking-wide"
-            >
-              PRESERVING WEALTH • CULTIVATING LEGACIES
-            </motion.h2>
+      {/* Track Record */}
+      <section className="bg-gray-950 py-24">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Track Record of Excellence</h2>
+            <p className="text-gray-400">Consistent performance through market cycles</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-5xl mx-auto">
+            <div>
+              <div className="text-5xl font-bold text-gold mb-3">$2.8B</div>
+              <div className="text-sm text-gray-400">Assets Under Management</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold text-gold mb-3">24.7%</div>
+              <div className="text-sm text-gray-400">5-Year Annualized Return</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold text-gold mb-3">0.87</div>
+              <div className="text-sm text-gray-400">Sharpe Ratio</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold text-gold mb-3">150+</div>
+              <div className="text-sm text-gray-400">Portfolio Companies</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed"
-            >
-              A distinguished multi-strategy family office and hedge fund. We develop exclusive, high-performance
-              strategies across nine key verticals, delivering exceptional returns and superior risk management for
-              our elite clients.
-            </motion.p>
-          </motion.div>
+      {/* Verticals */}
+      <section className="container mx-auto px-6 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Nine Investment Verticals</h2>
+          <p className="text-gray-400">Strategic positioning across transformative sectors</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {[
+            { icon: '🤖', name: 'Artificial Intelligence' },
+            { icon: '🔗', name: 'Blockchain & Web3' },
+            { icon: '⚛️', name: 'Quantum Computing' },
+            { icon: '🦾', name: 'Robotics & Automation' },
+            { icon: '🧬', name: 'Longevity & Biotech' },
+            { icon: '⚡', name: 'Clean Energy' },
+            { icon: '🚀', name: 'Space Technology' },
+            { icon: '🔐', name: 'Cybersecurity' },
+            { icon: '💎', name: 'Advanced Materials' }
+          ].map((v, i) => (
+            <div key={i} className="border border-gray-800 p-6 rounded hover:border-gold transition">
+              <div className="text-4xl mb-3">{v.icon}</div>
+              <h3 className="text-lg font-semibold">{v.name}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Team */}
+      <section id="team" className="bg-gray-950 py-24">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Leadership Team</h2>
+            <p className="text-gray-400">Seasoned investment professionals</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              { name: 'Robert Altchiller', role: 'Managing Partner & CIO', img: '/img/Robert-Altchiller.png' },
+              { name: 'Jacob Frankel', role: 'Head of Research', img: '/img/Jacob-Frankel.png' },
+              { name: 'Robin Rushing', role: 'Head of Operations', img: '/img/Robin-Rushing.png' }
+            ].map((m, i) => (
+              <div key={i} className="text-center">
+                <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-800">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-1">{m.name}</h3>
+                <p className="text-sm text-gray-500">{m.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="contact" className="container mx-auto px-6 py-24">
+        <div className="max-w-3xl mx-auto border border-gray-800 rounded-lg p-12 text-center">
+          <h2 className="text-4xl font-bold mb-4">Partner With Us</h2>
+          <p className="text-gray-400 mb-8">
+            Limited partnerships available for qualified investors.
+          </p>
+          <a href="mailto:inquiries@beyondalphaventures.com?subject=Investor%20Deck%20Request&body=I%20am%20interested%20in%20receiving%20the%20Beyond%20Alpha%20Ventures%20investor%20deck.%0A%0AName:%20%0ACompany:%20%0AEmail:%20%0APhone:%20">
+            <button className="bg-gold text-black px-10 py-4 rounded font-bold hover:bg-gold-light transition">
+              Request Investor Deck
+            </button>
+          </a>
+          <p className="text-sm text-gray-600 mt-6">Minimum: $1M • Accredited investors only</p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 bg-secondary/50 py-12 px-6">
-        <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
-          <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
+      <footer className="border-t border-gray-800 py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="font-semibold mb-3">Company</h4>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li><Link href="/about" className="hover:text-gold">About</Link></li>
+                <li><Link href="/team" className="hover:text-gold">Team</Link></li>
+                <li><Link href="/invest" className="hover:text-gold">Invest</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">Products</h4>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li><Link href="/app" className="hover:text-gold">Trading App</Link></li>
+                <li><Link href="/institutional" className="hover:text-gold">Institutional</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">Legal</h4>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li><a href="#" className="hover:text-gold">Privacy</a></li>
+                <li><a href="#" className="hover:text-gold">Terms</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">New York</h4>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                The Trump Building<br />
+                40 Wall Street, Suite 2702<br />
+                New York, NY 10005
+              </p>
+            </div>
+          </div>
+          <div className="text-center text-sm text-gray-600 pt-8 border-t border-gray-800">
+            <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
+          </div>
         </div>
       </footer>
-    </main>
+    </div>
   )
 }

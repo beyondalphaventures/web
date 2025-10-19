@@ -1,0 +1,78 @@
+[
+  {
+    "id": "sandboxaq",
+    "name": "SandboxAQ",
+    "logo": "/portfolio-images/sandboxaq-logo.svg",
+    "description": "Enterprise SaaS company delivering solutions at the nexus of AI and Quantum technology (LQM). Partnerships with Saudi Aramco, Sanofi, and US Army.",
+    "website": "https://www.sandboxaq.com",
+    "founded": "2022",
+    "vertical": "Artificial Intelligence",
+    "status": "Active",
+    "stage": "Series B",
+    "highlights": [
+      "$740M+ raised from leading investors",
+      "Partnerships with Aramco, Sanofi, US Army",
+      "CEO: Jack Hidary (Former Google X)"
+    ]
+  },
+  {
+    "id": "xai",
+    "name": "X.AI",
+    "logo": "/portfolio-images/xai-logo.svg",
+    "description": "Elon Musk's AI company building Grok, an AI assistant with real-time access to information. Valued at $50 billion.",
+    "website": "https://x.ai",
+    "founded": "2023",
+    "vertical": "Artificial Intelligence",
+    "status": "Active",
+    "stage": "Growth",
+    "highlights": [
+      "$50 billion valuation (2025)",
+      "Founded by Elon Musk",
+      "Grok AI assistant integrated with X"
+    ]
+  },
+  {
+    "id": "spacex",
+    "name": "SpaceX",
+    "logo": "/portfolio-images/spacex-logo.svg",
+    "description": "Leading aerospace manufacturer and space transportation company. Valuation surged to $350 billion through stock buyback program.",
+    "website": "https://www.spacex.com",
+    "founded": "2002",
+    "vertical": "Space Technology",
+    "status": "Active",
+    "stage": "Late Stage",
+    "highlights": [
+      "$350 billion valuation (Dec 2024)",
+      "Starship development ongoing",
+      "Starlink global internet service"
+    ]
+  },
+  {
+    "id": "palantir",
+    "name": "Palantir Technologies",
+    "logo": "/portfolio-images/palantir-logo.svg",
+    "description": "Public software company specializing in big data analytics for government and commercial clients. Known for AI Platform (AIP).",
+    "website": "https://www.palantir.com",
+    "founded": "2003",
+    "vertical": "Artificial Intelligence",
+    "status": "Public",
+    "stage": "Public (NYSE: PLTR)",
+    "highlights": [
+      "Public company on NYSE",
+      "AI Platform (AIP) for enterprises",
+      "Government and defense contracts"
+    ]
+  },
+  {
+    "id": "axispoint",
+    "name": "AxisPoint",
+    "logo": "/portfolio-images/axispoint-logo.svg",
+    "description": "Technology company focused on advanced solutions.",
+    "website": null,
+    "founded": null,
+    "vertical": "Technology",
+    "status": "Active",
+    "stage": "Growth",
+    "highlights": []
+  }
+]

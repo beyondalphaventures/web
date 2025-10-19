@@ -25,11 +25,20 @@ export default function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="#portfolio" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
+            <Link href="/about" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
+              About
+            </Link>
+            <Link href="/team" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
+              Team
+            </Link>
+            <Link href="/portfolio" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
               Portfolio
             </Link>
-            <Link href="#team" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
-              Team
+            <Link href="/invest" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
+              Invest
+            </Link>
+            <Link href="/news" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
+              News
             </Link>
 
             {/* Products Dropdown */}
@@ -62,7 +71,7 @@ export default function Navigation() {
                     className="absolute top-full left-0 mt-2 w-48 glass rounded-lg border border-white/10 overflow-hidden"
                   >
                     <Link
-                      href="/trading"
+                      href="/app"
                       className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold"
                     >
                       Trading Platform
@@ -71,32 +80,24 @@ export default function Navigation() {
                       href="/institutional"
                       className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold"
                     >
-                      Institutional Hub
-                    </Link>
-                    <Link
-                      href="/pricing"
-                      className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold"
-                    >
-                      Pricing
+                      Institutional
                     </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
-
-            <Link href="#news" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
-              News
-            </Link>
           </div>
 
           {/* Contact Button (Desktop) */}
-          <motion.button
-            className="hidden md:block bg-gold hover:bg-gold-light text-primary px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contact Us
-          </motion.button>
+          <Link href="/contact">
+            <motion.button
+              className="hidden md:block bg-gold hover:bg-gold-light text-primary px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Contact Us
+            </motion.button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -134,18 +135,39 @@ export default function Navigation() {
           >
             <div className="px-6 py-4 space-y-4">
               <Link
-                href="#portfolio"
+                href="/about"
+                className="block text-gray-300 hover:text-gold transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/team"
+                className="block text-gray-300 hover:text-gold transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Team
+              </Link>
+              <Link
+                href="/portfolio"
                 className="block text-gray-300 hover:text-gold transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Portfolio
               </Link>
               <Link
-                href="#team"
+                href="/invest"
                 className="block text-gray-300 hover:text-gold transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Team
+                Invest
+              </Link>
+              <Link
+                href="/news"
+                className="block text-gray-300 hover:text-gold transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                News
               </Link>
 
               {/* Mobile Products Submenu */}
@@ -175,7 +197,7 @@ export default function Navigation() {
                       className="pl-4 space-y-2 mt-2"
                     >
                       <Link
-                        href="/trading"
+                        href="/app"
                         className="block text-gray-400 hover:text-gold transition-colors py-2"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -186,35 +208,22 @@ export default function Navigation() {
                         className="block text-gray-400 hover:text-gold transition-colors py-2"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        Institutional Hub
-                      </Link>
-                      <Link
-                        href="/pricing"
-                        className="block text-gray-400 hover:text-gold transition-colors py-2"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Pricing
+                        Institutional
                       </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
 
-              <Link
-                href="#news"
-                className="block text-gray-300 hover:text-gold transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                News
+              <Link href="/contact" className="block mt-4">
+                <motion.button
+                  className="w-full bg-gold hover:bg-gold-light text-primary px-6 py-3 rounded-lg font-semibold"
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact Us
+                </motion.button>
               </Link>
-
-              <motion.button
-                className="w-full bg-gold hover:bg-gold-light text-primary px-6 py-3 rounded-lg font-semibold mt-4"
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact Us
-              </motion.button>
             </div>
           </motion.div>
         )}
