@@ -1,8 +1,5 @@
-'use client'
-
 import Navigation from '@/components/Navigation'
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
 import newsData from '@/data/news.json'
 
 export function generateStaticParams() {
@@ -11,10 +8,8 @@ export function generateStaticParams() {
   }))
 }
 
-export default function NewsArticle() {
-  const params = useParams()
-  const slug = params.slug as string
-
+export default async function NewsArticle({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const article = newsData.find(a => a.slug === slug)
 
   if (!article) {
