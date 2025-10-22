@@ -1,80 +1,78 @@
-# BeyondAlpha - Trading Platform & Venture Capital
+# Beyond Alpha Ventures
 
-Complete retail trading platform with integrated venture capital fund.
+Venture capital fund website and marketing platform.
 
-## 🚀 Features
+## Project Structure
 
-### Trading Platform
-- **$0 Commission Trading** - Trade U.S. stocks and ETFs with zero fees
-- **24/5 Market Access** - Extended trading hours Sunday 8PM to Friday 8PM ET
-- **IPO Access** - One-click subscription to public offerings
-- **Multi-Platform** - iOS, Android, Mac, Windows, and web
-- **Bank-Level Security** - 2FA, encryption, FINRA/SIPC protection
-- **IRA Accounts** - Up to 3% match on transfers
-
-### Venture Capital Fund
-Focused on 5 breakthrough sectors:
-- 🤖 **Artificial Intelligence**
-- 🔗 **Blockchain**
-- ⚛️ **Quantum Computing**
-- 🦾 **Robotics**
-- 🧬 **Longevity**
-
-## 📋 Setup Instructions
-
-### 1. Configure Analytics
-
-Replace placeholder IDs in both `index.html` and `about.html`:
-
-**Google Analytics:**
-```javascript
-// Replace GA_MEASUREMENT_ID with your actual GA4 measurement ID
-gtag('config', 'GA_MEASUREMENT_ID');
+```
+beyondalpha/
+├── apps/
+│   └── bav/              # Beyond Alpha Ventures website
+└── packages/
+    └── analytics/        # Analytics tracking (GA, FB, Twitter/X)
 ```
 
-**Facebook Pixel:**
-```javascript
-// Replace YOUR_PIXEL_ID with your actual Facebook Pixel ID
-fbq('init', 'YOUR_PIXEL_ID');
-```
-
-### 2. Deploy to GitHub Pages
+## Getting Started
 
 ```bash
-git push origin main
+# Install dependencies
+pnpm install
+
+# Run development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Export static site
+pnpm export
 ```
 
-The site will automatically deploy via GitHub Actions.
+## Technology Stack
 
-### 3. KYC/Onboarding Integration
+- Next.js 15.5.6 with App Router
+- React 19.2.0
+- Tailwind CSS 4.1.14
+- Framer Motion for animations
+- Static export for GitHub Pages deployment
 
-The signup form currently logs to console. Connect it to your backend API.
+## Beyond Alpha Ventures (BAV)
 
-### 4. Test Locally
+**Purpose**: Marketing website and VC fund information portal
+
+**Port**: 3000 (default)
+
+**Key Features**:
+- Investment portfolio showcase (5 sectors: AI, Blockchain, Quantum, Robotics, Longevity)
+- Fund performance metrics
+- Team profiles
+- News and updates
+- Institutional services information
+
+## Development
+
+The BAV app is a static Next.js site optimized for GitHub Pages deployment.
 
 ```bash
-python3 -m http.server 8000
+cd apps/bav
+pnpm dev     # Development server
+pnpm build   # Production build
+pnpm export  # Static export to 'out' directory
 ```
 
-Then visit http://localhost:8000
+## Analytics
 
-## 📁 Project Structure
+Unified analytics tracking is provided by the `@beyondalpha/analytics` package:
 
-```
-/
-├── index.html          # Main trading platform page
-├── about.html          # About page with CEO video
-├── public/img/         # Images and logos
-└── .github/workflows/  # GitHub Pages deployment
-```
+- Google Analytics 4
+- Facebook Pixel
+- Twitter/X Pixel
 
-## 🎯 Next Steps
+Analytics is only enabled in production and includes IP anonymization for privacy.
 
-1. Replace `GA_MEASUREMENT_ID` with your Google Analytics ID
-2. Replace `YOUR_PIXEL_ID` with your Facebook Pixel ID
-3. Connect signup/login forms to your backend
-4. Update SEC/FINRA registration numbers
-5. Push to deploy: `git push origin main`
+## Deployment
+
+BAV is configured for static export and deploys to GitHub Pages. The site is exported to the `out` directory and can be served from any static hosting provider.
 
 ---
 
