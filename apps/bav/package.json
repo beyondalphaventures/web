@@ -1,0 +1,35 @@
+{
+  "name": "@beyondalpha/bav",
+  "version": "1.0.0",
+  "description": "Beyond Alpha Ventures - Marketing and VC Fund website",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "lint": "next lint",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@beyondalpha/analytics": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.14",
+    "@types/node": "^24.8.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "framer-motion": "^12.23.24",
+    "next": "^15.5.6",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "playwright": "^1.56.1"
+  }
+}

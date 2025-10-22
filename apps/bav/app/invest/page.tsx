@@ -207,7 +207,8 @@ export default function Invest() {
             <div>
               <h4 className="text-gold font-semibold mb-4">Products</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/app" className="hover:text-gold transition">Trading App</a></li>
+                <li><a href="/products/begm" className="hover:text-gold transition">BEGM Trading Platform</a></li>
+                <li><a href="/portfolio" className="hover:text-gold transition">Portfolio Companies</a></li>
                 <li><a href="/institutional" className="hover:text-gold transition">Institutional</a></li>
               </ul>
             </div>

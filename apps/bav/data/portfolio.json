@@ -1,5 +1,22 @@
 [
   {
+    "id": "begm",
+    "name": "Beyond Equity Global Marketplace",
+    "logo": null,
+    "description": "Commission-free trading platform offering stocks, crypto, options, and commodities with 24/5 market access. Award-winning brokerage for day trading with real-time analytics and TradingView integration.",
+    "website": "http://localhost:3001",
+    "founded": "2024",
+    "vertical": "Blockchain & Web3",
+    "status": "Active",
+    "stage": "Growth",
+    "highlights": [
+      "$0 commission trading on stocks, crypto, and options",
+      "24/5 trading access with extended hours",
+      "Two-time winner 'Best Brokerage for Day Trading'",
+      "SEC licensed, FINRA/SIPC member"
+    ]
+  },
+  {
     "id": "sandboxaq",
     "name": "SandboxAQ",
     "logo": "/portfolio-images/sandboxaq-logo.svg",
