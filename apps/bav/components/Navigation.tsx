@@ -6,7 +6,10 @@ import Link from 'next/link'
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isProductsOpen, setIsProductsOpen] = useState(false)
+  const [isInvestmentsOpen, setIsInvestmentsOpen] = useState(false)
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false)
+  const [mobileInvestmentsOpen, setMobileInvestmentsOpen] = useState(false)
+  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false)
 
   return (
     <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
@@ -25,36 +28,20 @@ export default function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/about" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
-              About
-            </Link>
-            <Link href="/team" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
-              Team
-            </Link>
-            <Link href="/portfolio" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
-              Portfolio
-            </Link>
-            <Link href="/invest" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
-              Invest
-            </Link>
-            <Link href="/news" className="text-gray-400 hover:text-gold transition-colors text-sm font-medium">
-              News
-            </Link>
-
-            {/* Products Dropdown */}
+            {/* Investments Dropdown */}
             <div
               className="relative group"
-              onMouseEnter={() => setIsProductsOpen(true)}
-              onMouseLeave={() => setIsProductsOpen(false)}
+              onMouseEnter={() => setIsInvestmentsOpen(true)}
+              onMouseLeave={() => setIsInvestmentsOpen(false)}
             >
               <button className="text-gray-400 hover:text-gold transition-colors text-sm font-medium flex items-center gap-1">
-                Products
+                Investments
                 <motion.svg
                   className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  animate={{ rotate: isProductsOpen ? 180 : 0 }}
+                  animate={{ rotate: isInvestmentsOpen ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
@@ -62,172 +49,221 @@ export default function Navigation() {
               </button>
 
               <AnimatePresence>
-                {isProductsOpen && (
+                {isInvestmentsOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-48 glass rounded-lg border border-white/10 overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-56 glass rounded-lg border border-white/10 overflow-hidden"
                   >
                     <Link
-                      href="/app"
+                      href="/invest"
                       className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold"
                     >
-                      Trading Platform
+                      Invest
                     </Link>
                     <Link
-                      href="/institutional"
-                      className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold"
+                      href="/portfolio"
+                      className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold border-t border-white/5"
                     >
-                      Institutional
+                      Portfolio
                     </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
-          </div>
 
-          {/* Contact Button (Desktop) */}
-          <Link href="/contact">
-            <motion.button
-              className="hidden md:block bg-gold hover:bg-gold-light text-primary px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            {/* News Link */}
+            <Link
+              href="/news"
+              className="text-gray-400 hover:text-gold transition-colors text-sm font-medium"
             >
-              Contact Us
-            </motion.button>
-          </Link>
+              News
+            </Link>
+
+            {/* Company Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsCompanyOpen(true)}
+              onMouseLeave={() => setIsCompanyOpen(false)}
+            >
+              <button className="text-gray-400 hover:text-gold transition-colors text-sm font-medium flex items-center gap-1">
+                Company
+                <motion.svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  animate={{ rotate: isCompanyOpen ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </motion.svg>
+              </button>
+
+              <AnimatePresence>
+                {isCompanyOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-56 glass rounded-lg border border-white/10 overflow-hidden"
+                  >
+                    <Link
+                      href="/about"
+                      className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold"
+                    >
+                      About
+                    </Link>
+                    <Link
+                      href="/team"
+                      className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold border-t border-white/5"
+                    >
+                      Team
+                    </Link>
+                    <Link
+                      href="/press"
+                      className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold border-t border-white/5"
+                    >
+                      Press
+                    </Link>
+                    <Link
+                      href="/careers"
+                      className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold border-t border-white/5"
+                    >
+                      Careers
+                    </Link>
+                    <Link
+                      href="/data-room"
+                      className="block px-4 py-3 hover:bg-white/5 transition text-gray-300 hover:text-gold border-t border-white/5"
+                    >
+                      Data Room
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Contact Button */}
+            <Link href="/contact">
+              <motion.button
+                className="bg-gold text-black px-6 py-2 rounded font-semibold text-sm hover:bg-gold-light transition"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact
+              </motion.button>
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden relative z-50 p-2"
+            className="md:hidden text-gray-400 hover:text-gold relative z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
           >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <motion.span
-                animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                className="w-full h-0.5 bg-white block"
-              />
-              <motion.span
-                animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-full h-0.5 bg-white block"
-              />
-              <motion.span
-                animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                className="w-full h-5 bg-white block"
-              />
-            </div>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              )}
+            </svg>
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden glass border-t border-white/10"
-          >
-            <div className="px-6 py-4 space-y-4">
-              <Link
-                href="/about"
-                className="block text-gray-300 hover:text-gold transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/team"
-                className="block text-gray-300 hover:text-gold transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Team
-              </Link>
-              <Link
-                href="/portfolio"
-                className="block text-gray-300 hover:text-gold transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Portfolio
-              </Link>
-              <Link
-                href="/invest"
-                className="block text-gray-300 hover:text-gold transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Invest
-              </Link>
-              <Link
-                href="/news"
-                className="block text-gray-300 hover:text-gold transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                News
-              </Link>
-
-              {/* Mobile Products Submenu */}
-              <div>
-                <button
-                  className="flex items-center justify-between w-full text-gray-300 hover:text-gold transition-colors py-2"
-                  onClick={() => setIsProductsOpen(!isProductsOpen)}
-                >
-                  Products
-                  <motion.svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    animate={{ rotate: isProductsOpen ? 180 : 0 }}
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden overflow-hidden border-t border-white/5"
+            >
+              <div className="py-4 space-y-2">
+                {/* Investments Section */}
+                <div>
+                  <button
+                    onClick={() => setMobileInvestmentsOpen(!mobileInvestmentsOpen)}
+                    className="w-full text-left px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 transition flex items-center justify-between"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </motion.svg>
-                </button>
-
-                <AnimatePresence>
-                  {isProductsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-4 space-y-2 mt-2"
+                    Investments
+                    <svg
+                      className={`w-4 h-4 transition-transform ${mobileInvestmentsOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      <Link
-                        href="/app"
-                        className="block text-gray-400 hover:text-gold transition-colors py-2"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Trading Platform
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  {mobileInvestmentsOpen && (
+                    <div className="pl-4 space-y-1">
+                      <Link href="/invest" className="block px-4 py-2 text-sm text-gray-400 hover:text-gold hover:bg-white/5 transition">
+                        Invest
                       </Link>
-                      <Link
-                        href="/institutional"
-                        className="block text-gray-400 hover:text-gold transition-colors py-2"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Institutional
+                      <Link href="/portfolio" className="block px-4 py-2 text-sm text-gray-400 hover:text-gold hover:bg-white/5 transition">
+                        Portfolio
                       </Link>
-                    </motion.div>
+                    </div>
                   )}
-                </AnimatePresence>
-              </div>
+                </div>
 
-              <Link href="/contact" className="block mt-4">
-                <motion.button
-                  className="w-full bg-gold hover:bg-gold-light text-primary px-6 py-3 rounded-lg font-semibold"
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact Us
-                </motion.button>
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {/* News Link */}
+                <Link href="/news" className="block px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 transition">
+                  News
+                </Link>
+
+                {/* Company Section */}
+                <div>
+                  <button
+                    onClick={() => setMobileCompanyOpen(!mobileCompanyOpen)}
+                    className="w-full text-left px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 transition flex items-center justify-between"
+                  >
+                    Company
+                    <svg
+                      className={`w-4 h-4 transition-transform ${mobileCompanyOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  {mobileCompanyOpen && (
+                    <div className="pl-4 space-y-1">
+                      <Link href="/about" className="block px-4 py-2 text-sm text-gray-400 hover:text-gold hover:bg-white/5 transition">
+                        About
+                      </Link>
+                      <Link href="/team" className="block px-4 py-2 text-sm text-gray-400 hover:text-gold hover:bg-white/5 transition">
+                        Team
+                      </Link>
+                      <Link href="/press" className="block px-4 py-2 text-sm text-gray-400 hover:text-gold hover:bg-white/5 transition">
+                        Press
+                      </Link>
+                      <Link href="/careers" className="block px-4 py-2 text-sm text-gray-400 hover:text-gold hover:bg-white/5 transition">
+                        Careers
+                      </Link>
+                      <Link href="/data-room" className="block px-4 py-2 text-sm text-gray-400 hover:text-gold hover:bg-white/5 transition">
+                        Data Room
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                {/* Contact Button */}
+                <Link href="/contact">
+                  <button className="w-full mt-4 bg-gold text-black px-6 py-3 rounded font-semibold hover:bg-gold-light transition">
+                    Contact
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   )
 }

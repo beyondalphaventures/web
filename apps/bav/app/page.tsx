@@ -1,6 +1,7 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 export default function Home() {
@@ -169,45 +170,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="font-semibold mb-3">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-500">
-                <li><Link href="/about" className="hover:text-gold">About</Link></li>
-                <li><Link href="/team" className="hover:text-gold">Team</Link></li>
-                <li><Link href="/invest" className="hover:text-gold">Invest</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">Products</h4>
-              <ul className="space-y-2 text-sm text-gray-500">
-                <li><Link href="/app" className="hover:text-gold">Trading App</Link></li>
-                <li><Link href="/institutional" className="hover:text-gold">Institutional</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-500">
-                <li><a href="#" className="hover:text-gold">Privacy</a></li>
-                <li><a href="#" className="hover:text-gold">Terms</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">New York</h4>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                The Trump Building<br />
-                40 Wall Street, Suite 2702<br />
-                New York, NY 10005
-              </p>
-            </div>
-          </div>
-          <div className="text-center text-sm text-gray-600 pt-8 border-t border-gray-800">
-            <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import Link from 'next/link'
 import newsData from '@/data/news.json'
 
@@ -197,13 +198,7 @@ export default async function NewsArticle({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-12">
-        <div className="container mx-auto px-6">
-          <div className="text-center text-sm text-gray-600">
-            <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

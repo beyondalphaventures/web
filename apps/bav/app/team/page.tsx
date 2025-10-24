@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import Image from 'next/image'
 
 const fadeInUp = {
@@ -13,16 +14,28 @@ const fadeInUp = {
 export default function Team() {
   const team = [
     {
+      name: 'Jacob D. Frankel (Kobi)',
+      role: 'Venture Partner',
+      image: '/img/Jacob-Frankel.png',
+      bio: 'As Venture Partner, I can promise you this: You\'re not just another client here. We take a deeply personalized approach to crafting investment strategies that are designed specifically for your goals. Jacob founded and built Ar.ca, one of the earliest crypto hedge funds, and served as Venture Partner at Ikigai.Fund and Managing Partner of Second Chance Fund. Our team works tirelessly to ensure your wealth grows alongside us, with a focus on long-term success and a commitment to your unique needs. When you work with us, you\'re more than a client—you\'re a partner. Your financial journey is our top priority.'
+    },
+    {
       name: 'Robert Altchiller',
       role: 'Managing Partner & Chief Investment Officer',
       image: '/img/Robert-Altchiller.png',
       bio: 'With over 25 years in global markets, Robert leads our investment strategy and portfolio management. Previously served as Portfolio Manager at top-tier hedge funds managing $2B+ in assets.'
     },
     {
-      name: 'Jacob Frankel',
-      role: 'Partner & Head of Research',
-      image: '/img/Jacob-Frankel.png',
-      bio: 'Jacob spearheads our proprietary research initiatives across technology and emerging markets. Former Head of Quantitative Research at a leading investment bank with expertise in AI-driven analytics.'
+      name: 'Zach Kelling',
+      role: 'Partner',
+      image: '/img/Zach-Kelling.png',
+      bio: 'Zach brings extensive expertise in capital markets and strategic partnerships. His deep understanding of both traditional and emerging markets helps drive our investment thesis and portfolio growth.'
+    },
+    {
+      name: 'Frederick W. Newcomb',
+      role: 'Board Member',
+      image: '/img/Frederick-Newcomb.jpg',
+      bio: 'Frederick provides strategic oversight and governance as a Board Member. His decades of experience in finance and corporate governance ensure Beyond Alpha maintains the highest standards of fiduciary responsibility.'
     },
     {
       name: 'Robin Rushing',
@@ -57,7 +70,7 @@ export default function Team() {
 
       {/* Team Members */}
       <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto space-y-20">
+        <div className="max-w-5xl mx-auto space-y-12">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -65,12 +78,10 @@ export default function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className={`grid md:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'md:flex-row-reverse' : ''
-              }`}
+              className="flex flex-col md:flex-row gap-6 items-start"
             >
-              <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                <div className="glass rounded-2xl overflow-hidden aspect-square relative hover-lift">
+              <div className="flex-shrink-0">
+                <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gold/30 hover-lift">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -78,10 +89,10 @@ export default function Team() {
                   />
                 </div>
               </div>
-              <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                <h2 className="text-4xl font-bold mb-4 gradient-text">{member.name}</h2>
-                <p className="text-xl text-gold mb-6">{member.role}</p>
-                <p className="text-lg text-gray-300 leading-relaxed">{member.bio}</p>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-2 gradient-text">{member.name}</h2>
+                <p className="text-base text-gold mb-3">{member.role}</p>
+                <p className="text-sm text-gray-300 leading-relaxed">{member.bio}</p>
               </div>
             </motion.div>
           ))}
@@ -116,47 +127,7 @@ export default function Team() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 bg-secondary/50 py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="text-gold font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/about" className="hover:text-gold transition">About</a></li>
-                <li><a href="/team" className="hover:text-gold transition">Team</a></li>
-                <li><a href="/invest" className="hover:text-gold transition">Invest</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-gold font-semibold mb-4">Products</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/app" className="hover:text-gold transition">Trading App</a></li>
-                <li><a href="/institutional" className="hover:text-gold transition">Institutional</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-gold font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-gold transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-gold transition">Terms of Service</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-gold font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-gold transition">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-gold transition">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="text-center text-gray-500 text-sm border-t border-white/5 pt-8">
-            <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
-            <p className="mt-2 text-xs">
-              Past performance is not indicative of future results. Investment involves risk including possible loss of principal.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }

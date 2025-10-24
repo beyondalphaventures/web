@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 export default function Invest() {
   const verticals = [
@@ -193,48 +194,7 @@ export default function Invest() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 bg-secondary/50 py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="text-gold font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/about" className="hover:text-gold transition">About</a></li>
-                <li><a href="/team" className="hover:text-gold transition">Team</a></li>
-                <li><a href="/invest" className="hover:text-gold transition">Invest</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-gold font-semibold mb-4">Products</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/products/begm" className="hover:text-gold transition">BEGM Trading Platform</a></li>
-                <li><a href="/portfolio" className="hover:text-gold transition">Portfolio Companies</a></li>
-                <li><a href="/institutional" className="hover:text-gold transition">Institutional</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-gold font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-gold transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-gold transition">Terms of Service</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-gold font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-gold transition">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-gold transition">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="text-center text-gray-500 text-sm border-t border-white/5 pt-8">
-            <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
-            <p className="mt-2 text-xs">
-              Past performance is not indicative of future results. Investment involves risk including possible loss of principal.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }

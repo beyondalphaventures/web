@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import portfolioData from '@/data/portfolio.json'
 
 const verticals = [
@@ -192,13 +193,7 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-12">
-        <div className="container mx-auto px-6">
-          <div className="text-center text-sm text-gray-600">
-            <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

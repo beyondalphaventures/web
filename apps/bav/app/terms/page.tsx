@@ -1,6 +1,7 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
@@ -194,13 +195,7 @@ export default function TermsOfService() {
         </div>
       </div>
 
-      <footer className="border-t border-gray-800 py-12">
-        <div className="container mx-auto px-6">
-          <div className="text-center text-sm text-gray-600">
-            <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

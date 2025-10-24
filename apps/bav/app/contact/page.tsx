@@ -1,6 +1,7 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import { useState } from 'react'
 
 export default function Contact() {
@@ -9,6 +10,8 @@ export default function Contact() {
     email: '',
     phone: '',
     company: '',
+    role: '',
+    investorType: '',
     investmentAmount: '',
     message: ''
   })
@@ -22,6 +25,8 @@ Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone || 'Not provided'}
 Company: ${formData.company || 'Not provided'}
+Role: ${formData.role || 'Not provided'}
+Investor Type: ${formData.investorType || 'Not specified'}
 Investment Amount: ${formData.investmentAmount || 'Not specified'}
 
 Message:
@@ -38,9 +43,10 @@ ${formData.message || 'No message provided'}
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const value = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: value
     })
   }
 
@@ -54,11 +60,8 @@ ${formData.message || 'No message provided'}
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Get in <span className="text-gold">Touch</span>
           </h1>
-          <p className="text-xl text-gray-400 mb-4">
-            Schedule a consultation with our investment team
-          </p>
-          <p className="text-gray-500">
-            For qualified investors seeking institutional-grade strategies and personalized wealth management.
+          <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+            At Beyond Alpha Ventures, we are dedicated to helping you achieve your investment goals. Our team of experts is committed to providing personalized investment solutions tailored to your needs. Let us guide you towards generational wealth. Invest with confidence.
           </p>
         </div>
       </section>
@@ -129,6 +132,45 @@ ${formData.message || 'No message provided'}
               </div>
 
               <div>
+                <label htmlFor="role" className="block text-sm text-gray-400 mb-2">
+                  Role
+                </label>
+                <input
+                  type="text"
+                  id="role"
+                  name="role"
+                  value={formData.role}
+                  onChange={handleChange}
+                  className="w-full bg-gray-950 border border-gray-800 rounded px-4 py-3 focus:outline-none focus:border-gold transition"
+                  placeholder="e.g. CFO, Investment Manager"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="investorType" className="block text-sm text-gray-400 mb-2">
+                  Investor Type
+                </label>
+                <select
+                  id="investorType"
+                  name="investorType"
+                  value={formData.investorType}
+                  onChange={handleChange}
+                  className="w-full bg-gray-950 border border-gray-800 rounded px-4 py-3 focus:outline-none focus:border-gold transition"
+                >
+                  <option value="">Select investor type</option>
+                  <option value="Individual">Individual</option>
+                  <option value="Qualified Purchaser">Qualified Purchaser</option>
+                  <option value="Accredited Individual Investor">Accredited Individual Investor</option>
+                  <option value="Institutional Investor">Institutional Investor</option>
+                </select>
+                <p className="text-xs text-gray-500 mt-1">
+                  Institutional Investor: Company or organization that invests money on behalf of clients or members. 
+                  Accredited Individual Investor: Anyone who either earned income that exceeded $200,000 (or $300,000 together with a spouse) in each of the prior two years, 
+                  and reasonably expects the same for the current year, OR, has a net worth over $1 million, either alone or together with a spouse (excluding the value of the person's primary residence).
+                </p>
+              </div>
+
+              <div>
                 <label htmlFor="investmentAmount" className="block text-sm text-gray-400 mb-2">
                   Intended Investment Amount
                 </label>
@@ -166,11 +208,11 @@ ${formData.message || 'No message provided'}
                 type="submit"
                 className="w-full bg-gold hover:bg-gold-light text-black font-semibold py-3 rounded transition"
               >
-                Submit Inquiry
+                Contact Us
               </button>
 
               <p className="text-xs text-gray-600 text-center mt-4">
-                By submitting this form, you acknowledge that you are an accredited investor.
+                By submitting this form, you agree to our terms of service and privacy policy.
               </p>
             </form>
           </div>
@@ -178,11 +220,19 @@ ${formData.message || 'No message provided'}
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
+              <div className="mb-8">
+                <img 
+                  src="/img/bav-logo-long.png" 
+                  alt="Beyond Alpha Ventures" 
+                  className="h-12 mb-4"
+                />
+              </div>
+
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-gold font-semibold mb-2">Headquarters</h3>
+                  <h3 className="text-gold font-semibold mb-2">New York</h3>
                   <p className="text-gray-400">
                     The Trump Building<br />
                     40 Wall Street, Suite 2702<br />
@@ -192,12 +242,26 @@ ${formData.message || 'No message provided'}
 
                 <div>
                   <h3 className="text-gold font-semibold mb-2">Phone</h3>
-                  <p className="text-gray-400">+1 (212) 555-0100</p>
+                  <p className="text-gray-400">
+                    Main Office: <a href="tel:+16463801801" className="hover:text-gold transition">(646) 380-1801</a><br />
+                    Business Line: <a href="tel:+16464410400" className="hover:text-gold transition">(646) 441-0400</a><br />
+                    Direct: <a href="tel:+19732247098" className="hover:text-gold transition">(973) 224-7098</a>
+                  </p>
                 </div>
 
                 <div>
                   <h3 className="text-gold font-semibold mb-2">Email</h3>
-                  <p className="text-gray-400">inquiries@beyondalphaventures.com</p>
+                  <p className="text-gray-400">
+                    <a href="mailto:inquiries@beyondalphaventures.com" className="hover:text-gold transition">inquiries@beyondalphaventures.com</a><br />
+                    <a href="mailto:investors@beyondalphaventures.com" className="hover:text-gold transition">investors@beyondalphaventures.com</a>
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-gold font-semibold mb-2">Website</h3>
+                  <p className="text-gray-400">
+                    <a href="https://www.beyondalphaventures.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition">www.beyondalphaventures.com</a>
+                  </p>
                 </div>
 
                 <div>
@@ -249,16 +313,7 @@ ${formData.message || 'No message provided'}
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-12">
-        <div className="container mx-auto px-6">
-          <div className="text-center text-sm text-gray-600">
-            <p>© 2025 Beyond Alpha Ventures. All rights reserved.</p>
-            <p className="mt-2 text-xs">
-              Investment advisory services offered through Beyond Alpha Ventures LLC, a registered investment adviser.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
