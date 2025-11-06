@@ -179,7 +179,7 @@ export default function TermsOfService() {
               <div className="border border-gray-800 rounded-lg p-6 bg-gray-950">
                 <p className="text-white mb-2"><strong>Beyond Alpha Ventures L.L.C.</strong></p>
                 <p className="text-gray-400">General Inquiries: contact@beyondalphaventures.com</p>
-                <p className="text-gray-400">Investor Relations: investors@beyondalphaventures.com</p>
+                <p className="text-gray-400">Investor Relations: jfrankel@beyondalphaventures.com</p>
                 <p className="text-gray-400 mt-3">Phone: (646)-380-1801 (Main Office)</p>
                 <p className="text-gray-400">Phone: (646)-441-0400 (Business)</p>
                 <p className="text-gray-400">Phone: (973)-224-7098 (Personal)</p>

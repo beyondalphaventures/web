@@ -30,7 +30,7 @@ export default function Home() {
                 Schedule a Consultation
               </button>
             </Link>
-            <a href="mailto:inquiries@beyondalphaventures.com?subject=Track%20Record%20Request">
+            <a href="mailto:jfrankel@beyondalphaventures.com?subject=Track%20Record%20Request">
               <button className="border border-gold text-gold px-8 py-3 rounded font-semibold hover:bg-gold hover:text-black transition">
                 View Our Track Record
               </button>
@@ -160,7 +160,7 @@ export default function Home() {
           <p className="text-gray-400 mb-8">
             Limited partnerships available for qualified investors.
           </p>
-          <a href="mailto:inquiries@beyondalphaventures.com?subject=Investor%20Deck%20Request&body=I%20am%20interested%20in%20receiving%20the%20Beyond%20Alpha%20Ventures%20investor%20deck.%0A%0AName:%20%0ACompany:%20%0AEmail:%20%0APhone:%20">
+          <a href="mailto:jfrankel@beyondalphaventures.com?subject=Investor%20Deck%20Request&body=I%20am%20interested%20in%20receiving%20the%20Beyond%20Alpha%20Ventures%20investor%20deck.%0A%0AName:%20%0ACompany:%20%0AEmail:%20%0APhone:%20">
             <button className="bg-gold text-black px-10 py-4 rounded font-bold hover:bg-gold-light transition">
               Request Investor Deck
             </button>

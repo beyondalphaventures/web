@@ -18,7 +18,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center relative z-50">
             <motion.img
-              src="/img/bav-logo.png"
+              src="/img/bav-logo-long.png"
               alt="BAV logo"
               className="h-10"
               whileHover={{ scale: 1.05 }}

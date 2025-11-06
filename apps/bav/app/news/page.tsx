@@ -133,7 +133,7 @@ export default function News() {
           <p className="text-gray-400 mb-8">
             Subscribe to receive updates on our portfolio companies and investment insights.
           </p>
-          <a href="mailto:inquiries@beyondalphaventures.com?subject=Newsletter%20Subscription&body=I%20would%20like%20to%20subscribe%20to%20the%20Beyond%20Alpha%20Ventures%20newsletter.%0A%0AName:%20%0AEmail:%20">
+          <a href="mailto:jfrankel@beyondalphaventures.com?subject=Newsletter%20Subscription&body=I%20would%20like%20to%20subscribe%20to%20the%20Beyond%20Alpha%20Ventures%20newsletter.%0A%0AName:%20%0AEmail:%20">
             <button className="bg-gold text-black px-8 py-3 rounded font-semibold hover:bg-gold-light transition">
               Subscribe to Updates
             </button>

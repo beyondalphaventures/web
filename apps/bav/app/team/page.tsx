@@ -115,13 +115,13 @@ export default function Team() {
             <p className="text-xl text-gray-300 mb-8">
               We're always looking for exceptional talent to join our growing team.
             </p>
-            <motion.button
+            <Link href="/careers"><motion.button
               className="bg-gold hover:bg-gold-light text-primary px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               View Open Positions
-            </motion.button>
+            </motion.button></Link>
           </motion.div>
         </div>
       </section>

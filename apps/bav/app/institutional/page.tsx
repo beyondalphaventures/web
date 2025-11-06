@@ -170,7 +170,7 @@ export default function Institutional() {
             <p className="text-xl text-gray-300 mb-8">
               Discuss how we can tailor our institutional solutions to meet your specific needs.
             </p>
-            <a href="mailto:institutional@beyondalphaventures.com?subject=Institutional%20Services%20Inquiry&body=I%20am%20interested%20in%20learning%20more%20about%20your%20institutional%20solutions.%0A%0AName:%20%0AOrganization:%20%0AEmail:%20%0APhone:%20%0A%0AArea%20of%20Interest:%20">
+            <a href="mailto:jfrankel@beyondalphaventures.com?subject=Institutional%20Services%20Inquiry&body=I%20am%20interested%20in%20learning%20more%20about%20your%20institutional%20solutions.%0A%0AName:%20%0AOrganization:%20%0AEmail:%20%0APhone:%20%0A%0AArea%20of%20Interest:%20">
               <motion.button
                 className="bg-gold hover:bg-gold-light text-primary px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300"
                 whileHover={{ scale: 1.05 }}

@@ -36,7 +36,7 @@ ${formData.message || 'No message provided'}
     // Create mailto link
     const subject = encodeURIComponent('Investment Inquiry from ' + formData.name)
     const body = encodeURIComponent(emailBody)
-    const mailtoLink = `mailto:inquiries@beyondalphaventures.com?subject=${subject}&body=${body}`
+    const mailtoLink = `mailto:jfrankel@beyondalphaventures.com?subject=${subject}&body=${body}`
 
     // Open email client
     window.location.href = mailtoLink
@@ -252,8 +252,8 @@ ${formData.message || 'No message provided'}
                 <div>
                   <h3 className="text-gold font-semibold mb-2">Email</h3>
                   <p className="text-gray-400">
-                    <a href="mailto:inquiries@beyondalphaventures.com" className="hover:text-gold transition">inquiries@beyondalphaventures.com</a><br />
-                    <a href="mailto:investors@beyondalphaventures.com" className="hover:text-gold transition">investors@beyondalphaventures.com</a>
+                    <a href="mailto:jfrankel@beyondalphaventures.com" className="hover:text-gold transition">jfrankel@beyondalphaventures.com</a><br />
+                    <a href="mailto:jfrankel@beyondalphaventures.com" className="hover:text-gold transition">jfrankel@beyondalphaventures.com</a>
                   </p>
                 </div>
 
@@ -289,7 +289,7 @@ ${formData.message || 'No message provided'}
               <p className="text-sm text-gray-400 mb-4">
                 Prefer to speak directly with our team? Schedule a confidential consultation.
               </p>
-              <a href="mailto:inquiries@beyondalphaventures.com?subject=Meeting%20Request&body=I%20would%20like%20to%20schedule%20a%20meeting%20with%20the%20Beyond%20Alpha%20Ventures%20team.%0A%0AName:%20%0AEmail:%20%0APhone:%20%0APreferred%20Date/Time:%20%0APurpose:%20">
+              <a href="mailto:jfrankel@beyondalphaventures.com?subject=Meeting%20Request&body=I%20would%20like%20to%20schedule%20a%20meeting%20with%20the%20Beyond%20Alpha%20Ventures%20team.%0A%0AName:%20%0AEmail:%20%0APhone:%20%0APreferred%20Date/Time:%20%0APurpose:%20">
                 <button className="bg-transparent border border-gold text-gold px-6 py-2 rounded hover:bg-gold hover:text-black transition font-semibold text-sm">
                   Request Meeting
                 </button>
