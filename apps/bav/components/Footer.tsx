@@ -24,6 +24,11 @@ export default function Footer() {
                   Portfolio
                 </Link>
               </li>
+              <li>
+                <a href="https://beyondequity.app" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+                  Trade
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -120,21 +125,21 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-medium text-gray-300 mb-1">Email</p>
-                <a 
-                  href="mailto:jfrankel@beyondalphaventures.com" 
+                <a
+                  href="mailto:jfrankel@beyondalphaventures.com"
                   className="hover:text-gold transition-colors"
                 >
                   jfrankel@beyondalphaventures.com
                 </a>
               </div>
               <div>
-                <a 
-                  href="https://www.beyondalphaventures.com" 
-                  target="_blank" 
+                <a
+                  href="https://beyondequity.app"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gold transition-colors"
                 >
-                  www.beyondalphaventures.com →
+                  beyondequity.app →
                 </a>
               </div>
             </div>
