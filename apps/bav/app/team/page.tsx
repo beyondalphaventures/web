@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
