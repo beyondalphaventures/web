@@ -135,7 +135,6 @@ export default function Home() {
             {[
               { name: 'Robert Altchiller', role: 'Managing Partner & CIO', img: '/img/Robert-Altchiller.png' },
               { name: 'Jacob Frankel', role: 'Head of Research', img: '/img/Jacob-Frankel.png' },
-              { name: 'Robin Rushing', role: 'Head of Operations', img: '/img/Robin-Rushing.png' }
             ].map((m, i) => (
               <div key={i} className="text-center">
                 <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-800">

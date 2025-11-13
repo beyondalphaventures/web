@@ -27,24 +27,12 @@ export default function Team() {
       bio: 'With over 25 years in global markets, Robert leads our investment strategy and portfolio management. Previously served as Portfolio Manager at top-tier hedge funds managing $2B+ in assets.'
     },
     {
-      name: 'Zach Kelling',
-      role: 'Partner',
-      image: '/img/Zach-Kelling.png',
-      bio: 'Zach brings extensive expertise in capital markets and strategic partnerships. His deep understanding of both traditional and emerging markets helps drive our investment thesis and portfolio growth.'
-    },
-    {
       name: 'Frederick W. Newcomb',
       role: 'Board Member',
       image: '/img/Frederick-Newcomb.jpg',
       bio: 'Frederick provides strategic oversight and governance as a Board Member. His decades of experience in finance and corporate governance ensure Beyond Alpha maintains the highest standards of fiduciary responsibility.'
-    },
-    {
-      name: 'Robin Rushing',
-      role: 'Partner & Head of Operations',
-      image: '/img/Robin-Rushing.png',
-      bio: 'Robin oversees all operational aspects and client relations. Brings 20+ years of experience in institutional asset management and family office operations.'
     }
-  ]
+    ]
 
   return (
     <main className="min-h-screen">

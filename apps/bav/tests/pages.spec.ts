@@ -27,7 +27,6 @@ test.describe('Team Page', () => {
     await expect(page.getByText('Leadership Team')).toBeVisible();
     await expect(page.getByText('Robert Altchiller')).toBeVisible();
     await expect(page.getByText('Jacob Frankel')).toBeVisible();
-    await expect(page.getByText('Robin Rushing')).toBeVisible();
   });
 
   test('should display team member roles', async ({ page }) => {
@@ -35,13 +34,12 @@ test.describe('Team Page', () => {
 
     await expect(page.getByText('Managing Partner & Chief Investment Officer')).toBeVisible();
     await expect(page.getByText('Partner & Head of Research')).toBeVisible();
-    await expect(page.getByText('Partner & Head of Operations')).toBeVisible();
+    await expect(page.getByText('Board Member')).toBeVisible();
   });
 
   test('should display team images', async ({ page }) => {
     await page.goto('/team');
 
-    const images = page.locator('img[alt*="Robert Altchiller"], img[alt*="Jacob Frankel"], img[alt*="Robin Rushing"]');
     await expect(images.first()).toBeVisible();
   });
 });
